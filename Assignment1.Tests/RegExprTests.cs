@@ -100,4 +100,29 @@ public class RegExprTests
         // assert
         result.Should().Equal(expected);
     }
+
+    [Fact]
+    public void Urls_return_tuple_with_url_and_title_or_inner_text()
+    {
+        // arrange
+        var html =
+            @"
+            <div>
+                <a title='this-title' href='https://github.com/mfoman/assignment-01'>Assignment 01</a>
+                <a href='http://www.example.com'>this-innertext</a>
+            </div>
+            ";
+
+        var expected = new List<(Uri, string)>()
+        {
+            (new Uri("https://github.com/mfoman/assignment-01"), "this-title"),
+            (new Uri("http://www.example.com"), "this-innertext"),
+        };
+
+        // act
+        var result = RegExpr.Urls(html);
+
+        // assert
+        result.Should().Equal(expected);
+    }
 }
