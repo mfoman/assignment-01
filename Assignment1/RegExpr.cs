@@ -5,10 +5,9 @@ public static class RegExpr
 {
     public static IEnumerable<string> SplitLine(IEnumerable<string> lines) 
     {
-        var pattern = @"(\w+)";
         foreach (var line in lines) 
         {
-            foreach (Match match in Regex.Matches(line, pattern))
+            foreach (Match match in Regex.Matches(line, @"(\w+)"))
             {
                 yield return match.Value;
             }  
@@ -17,10 +16,9 @@ public static class RegExpr
 
     public static IEnumerable<(int width, int height)> Resolution(IEnumerable<string> resolutions) 
     {
-        var pattern = @"(?<width>\d+)x(?<height>\d+)";
          foreach (var res in resolutions) 
         {
-            foreach (Match match in Regex.Matches(res, pattern))
+            foreach (Match match in Regex.Matches(res, @"(?<width>\d+)x(?<height>\d+)"))
             {
                 yield return (int.Parse(match.Groups["width"].Value), int.Parse(match.Groups["height"].Value));
             }  
