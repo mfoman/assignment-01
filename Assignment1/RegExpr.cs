@@ -25,7 +25,15 @@ public static class RegExpr
         }
     }
 
-    public static IEnumerable<string> InnerText(string html, string tag) => throw new NotImplementedException();
+    public static IEnumerable<string> InnerText(string html, string tag) 
+    {
+        var regexPattern = @"<(" +tag+ @"*)\b[^>]*>((?<INNERTEXT>[^>]*)</{0,1}\w*\b[^>]*>)*(?<INNERTEXTTWO>.*)</\1>";
+       
+        foreach (Match match in Regex.Matches(html, regexPattern)) 
+        {
+            yield return match.Groups["INNERTEXT"].Value;
+        }
+    }
 
     public static IEnumerable<(Uri url, string title)> Urls(string html) => throw new NotImplementedException();
 }

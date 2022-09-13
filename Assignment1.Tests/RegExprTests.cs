@@ -91,7 +91,13 @@ public class RegExprTests
 
         var expected = new List<string>()
         {
-            "The phrase regular expressions (and consequently, regexes) is often used to mean the specific, standard textual syntax for representing patterns that matching text need to conform to.",
+            "The phrase ",
+            "regular expressions",
+            " (and consequently, regexes) is often used to mean the specific, standard textual syntax for representing ",
+            "patterns",
+            " that matching ",
+            "text",
+            " need to conform to."
         };
 
         // act
