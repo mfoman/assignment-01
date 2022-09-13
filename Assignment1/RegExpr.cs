@@ -27,11 +27,15 @@ public static class RegExpr
 
     public static IEnumerable<string> InnerText(string html, string tag) 
     {
-        var regexPattern = @"<(" +tag+ @"*)\b[^>]*>((?<INNERTEXT>[^>]*)</{0,1}\w*\b[^>]*>)*(?<INNERTEXTTWO>.*)</\1>";
-       
-        foreach (Match match in Regex.Matches(html, regexPattern)) 
+        var outerPattern = @"<(" + tag + @"*)\b[^>]*>(?<INNERTEXT>.*?)</\1>";
+        var innerPattern = @"</{0,1}\w*\b[^>]*>";
+
+        foreach (Match outerMatch in Regex.Matches(html, outerPattern))
         {
-            yield return match.Groups["INNERTEXT"].Value;
+            foreach (var innerMatch in Regex.Split(outerMatch.Groups["INNERTEXT"].Value, innerPattern))
+            {
+                yield return innerMatch;
+            }
         }
     }
 
