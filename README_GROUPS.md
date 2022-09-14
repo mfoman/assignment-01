@@ -24,13 +24,13 @@ If you switch to another group, send a pull request to this file that indicates 
 * Group 16: hcan, vist, bjhh
 * Group 17: nihp, ojoh, mreh
 * Group 18: nsel, paab, oska
-* Group 19: ksig, pekp, tbru
+* Group 19: hast, pekp, tbru
 * Group 20: tuho, phimo, rogy
 * Group 21: ivil, asgm, frjo
 * Group 22: bath, ehel, jakst
 * Group 23: reer, aarv, lanr
 * Group 24: luha, base, chbl
-* Group 25: avia, remy, selb
+* Group 25: avia, behv, selb 
 * Group 26: kbej, dlha, elbr
 * Group 27: raoo, annro, aegr
 * Group 28: diol, kays, emno
@@ -42,15 +42,16 @@ If you switch to another group, send a pull request to this file that indicates 
 * Group 34: aguh, erja, mgan
 //* Group 35: shad, brat, millh
 * Group 36: asjo, aldy, skas
-* Group 37: aing, memr, phla
-* Group 38: behv, tokj, jsev
+* Group 37: aing, memr
+* Group 38: tokj, jsev
 * Group 39: tbav, nlje, gues
 * Group 40: tcla, siol, siar
 * Group 41: sibh, crco, kmey
-* Group 42: stmp, hast, tael
+* Group 42: stmp, tael
 * Group 43: emtj, jklo, mwha
 * Group 44: monha, ssbo, timj
 * Group 45: labp, jric, laku
 * Group 46: amdh, frai, weny
-* Group 47: mhve, frhc, bhag
-* Group 48: unla, asly, mbjn
+* Group 47: Emno, frhc, bhag
+* Group 48: asly, mbjn
+* Group 49: phla, unla
