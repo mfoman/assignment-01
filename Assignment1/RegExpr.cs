@@ -39,5 +39,16 @@ public static class RegExpr
         }
     }
 
-    public static IEnumerable<(Uri url, string title)> Urls(string html) => throw new NotImplementedException();
+    public static IEnumerable<(Uri url, string title)> Urls(string html)
+    {
+        string pattern = @"<a(?=[^>]*(href=""(?<URL>[^""]*)"")){0,1}(?=[^>]*(title=""(?<TITLE>[^""]*)"")){0,1}[^>]*>(?(2)(?:[^<>]*)|)(?<TITLE>[^<>]*)</a>";
+
+        foreach (Match urlmatch in Regex.Matches(html, pattern, RegexOptions.Multiline))
+        {
+            yield return (
+                new Uri(urlmatch.Groups["URL"].Value),
+                urlmatch.Groups["TITLE"].Captures[0].Value
+            );
+        }
+    }
 }

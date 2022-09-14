@@ -111,13 +111,7 @@ public class RegExprTests
     public void Urls_return_tuple_with_url_and_title_or_inner_text()
     {
         // arrange
-        var html =
-            @"
-            <div>
-                <a title='this-title' href='https://github.com/mfoman/assignment-01'>Assignment 01</a>
-                <a href='http://www.example.com'>this-innertext</a>
-            </div>
-            ";
+        var html = "<div><a title=\"this-title\" href=\"https://github.com/mfoman/assignment-01\">Assignment 01</a><a href=\"http://www.example.com\">this-innertext</a></div>";
 
         var expected = new List<(Uri, string)>()
         {
